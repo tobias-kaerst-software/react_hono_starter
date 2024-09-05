@@ -1,0 +1,8 @@
+{
+  "name": "backend",
+  "type": "module",
+  "devDependencies": {
+    "@modules/linter": "workspace:*"
+  },
+  "prettier": "@modules/linter/config/prettier.config.js"
+}

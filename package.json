@@ -1,0 +1,12 @@
+{
+  "name": "recipe_manager",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "modules/*"
+  ],
+  "scripts": {
+    "frontend": "bun --filter 'frontend'",
+    "deps": "bunx npm-check-updates --workspaces --root -u"
+  }
+}

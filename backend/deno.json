@@ -1,0 +1,15 @@
+{
+  "imports": {
+    "@modules/linter": "npm:@modules/linter@^1.0.0",
+    "hono": "jsr:@hono/hono@^4.5.10"
+  },
+  "tasks": {
+    "start": "deno run -N src/main.ts",
+    "dev": "deno run -N --watch src/main.ts",
+    "build": "deno compile -N --output dist/main src/main.ts",
+    "lint": "sleep 1 && deno task lint:check & deno task lint:prettier & deno task lint:eslint",
+    "lint:check": "deno check src/main.ts",
+    "lint:prettier": "bunx prettier --ignore-path .gitignore --check --write .",
+    "lint:eslint": "bunx eslint . --flag unstable_ts_config"
+  }
+}
