@@ -25,9 +25,15 @@ export default tsEslint.config(
   {
     settings: { tailwindcss: { callees: ['classnames', 'clsx', 'ctl', 'cn'] }, react: { version: 'detect' } },
     rules: {
+      // Vite automatically injects React into JSX files, so we don't need to import it.
       'react/react-in-jsx-scope': 'off',
-      '@typescript-eslint/no-non-null-assertion': 'off',
+      // We use TypeScript, so we don't need prop types.
+      "react/prop-types": "off",
+
+      // Declare the order of imports and the typescript alias pattern.
       'perfectionist/sort-imports': ['error', { internalPattern: ['$/**'], newlinesBetween: 'always' }],
+
+      // Allow the use of abbreviations, this should be developer choice.
       "unicorn/prevent-abbreviations": "off"
     },
   },

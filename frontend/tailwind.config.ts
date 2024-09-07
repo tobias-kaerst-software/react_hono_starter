@@ -1,18 +1,17 @@
 import type { Config } from 'tailwindcss';
 
-import tailwindAnimate from 'tailwindcss-animate';
+import tailwind_animate from 'tailwindcss-animate';
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
-  plugins: [tailwindAnimate],
+  darkMode: ['class'],
+  plugins: [tailwind_animate],
   theme: {
     extend: {
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'slide-down': 'slide-down 0.2s ease-out',
-        'slide-up': 'slide-up 0.2s ease-out',
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
         accent: {
@@ -24,6 +23,13 @@ export default {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -49,30 +55,8 @@ export default {
           foreground: 'hsl(var(--secondary-foreground))',
         },
       },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
-        'slide-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-collapsible-content-height)' },
-        },
-        'slide-up': {
-          '0%': {
-            height: 'var(--radix-collapsible-content-height)',
-            overflowY: 'auto',
-          },
-          '1%': {
-            height: 'var(--radix-collapsible-content-height)',
-            overflowY: 'hidden',
-          },
-          '100%': { height: '0', overflowY: 'hidden' },
-        },
+      fontFamily: {
+        geist: ['Geist', 'sans-serif'],
       },
     },
   },
