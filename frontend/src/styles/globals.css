@@ -63,15 +63,14 @@
   * {
     @apply border-border;
   }
+
+  html {
+    @apply font-geist scroll-smooth antialiased focus:scroll-auto;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
   }
-}
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/GeistVF.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: auto;
 }
