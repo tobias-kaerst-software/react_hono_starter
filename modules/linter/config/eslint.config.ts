@@ -34,7 +34,9 @@ export default tsEslint.config(
       'perfectionist/sort-imports': ['error', { internalPattern: ['$/**'], newlinesBetween: 'always' }],
 
       // Allow the use of abbreviations, this should be developer choice.
-      "unicorn/prevent-abbreviations": "off"
+      "unicorn/prevent-abbreviations": "off",
+      // React.js components should be named with PascalCase.
+      "unicorn/filename-case": "off",
     },
   },
 );
