@@ -8,7 +8,7 @@ export interface HStackProps extends HTMLAttributes<HTMLDivElement> {
 
 export const HStack: FC<HStackProps> = ({ children, ...props }) => {
   return (
-    <div {...props} className={cn('flex gap-2', props.className)}>
+    <div {...props} className={cn('flex items-center gap-2', props.className)}>
       {children}
     </div>
   );

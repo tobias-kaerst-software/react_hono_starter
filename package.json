@@ -1,10 +1,13 @@
 {
-  "name": "recipe_manager",
+  "name": "react_hono_starter",
   "workspaces": [
     "frontend",
     "backend",
     "modules/*"
   ],
+  "overrides": {
+    "@swc/core": "1.5.7"
+  },
   "scripts": {
     "frontend": "bun --filter 'frontend'",
     "deps": "bunx npm-check-updates --workspaces --root -u"
