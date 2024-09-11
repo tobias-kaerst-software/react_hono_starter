@@ -1,4 +1,4 @@
-preserve_hierarchy: true
+preserve_hierarchy: 1
 files:
   - source: /**/locales/de.po*
     translation: /**/locales/%two_letters_code%.po
