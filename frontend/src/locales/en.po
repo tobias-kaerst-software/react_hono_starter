@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-09-11 21:11+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+
+#: src/pages/Homepage.tsx:12
+msgid "Einführung in React.js"
+msgstr ""
+
+#: src/pages/Homepage.tsx:23
+msgid "Erste Schritte"
+msgstr ""
+
+#: src/pages/Homepage.tsx:15
+msgid "React.js, allgemein bekannt als React, ist eine Open-Source-JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen, insbesondere für Single-Page-Anwendungen. Entwickelt von Facebook, ermöglicht React Entwicklern, große Webanwendungen zu erstellen, die effizient auf Datenänderungen reagieren und sich entsprechend aktualisieren können."
+msgstr ""
+
+#: src/pages/Homepage.tsx:26
+msgid "Um mit React zu beginnen, müssen Node.js und npm (Node Package Manager) auf Ihrem Computer installiert sein. Sie können eine neue React-Anwendung mit dem folgenden Befehl erstellen:"
+msgstr ""
