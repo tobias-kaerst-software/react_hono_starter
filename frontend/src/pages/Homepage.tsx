@@ -3,8 +3,12 @@ import { Trans } from '@lingui/macro';
 import { Button } from '$/components/ui/button';
 import { Stack } from '$/components/ui/stack';
 import { Typography } from '$/components/ui/typography';
+import { useBearStore } from '$/stores/useBearStore';
 
 export const Homepage = () => {
+  const bears = useBearStore.use.bears();
+  const increment = useBearStore.get.increment();
+
   return (
     <Stack className='container max-w-[750px] gap-10 pt-24'>
       <div>
@@ -30,7 +34,9 @@ export const Homepage = () => {
         </Typography>
       </div>
 
-      <Button className='w-full'>Mehr erfahren</Button>
+      <Button className='w-full' onClick={increment}>
+        Mehr erfahren {bears}
+      </Button>
     </Stack>
   );
 };

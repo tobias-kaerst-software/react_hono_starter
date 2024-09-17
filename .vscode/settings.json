@@ -16,7 +16,7 @@
   // !Explorer
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".gitignore,.editorconfig,tsconfig.json,eslint.config.ts,deno.json",
+    "package.json": ".gitignore,.editorconfig,tsconfig.json,eslint.config.ts,deno.json,crowdin.yml",
     "vite.config.ts": "index.html,lingui.config.ts",
     "main.tsx": "reset.d.ts,env.d.ts,vite-env.d.ts",
     "tailwind.config.ts": "postcss.config.js,components.json",
