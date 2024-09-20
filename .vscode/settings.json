@@ -16,11 +16,10 @@
   // !Explorer
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".gitignore,.editorconfig,tsconfig.json,eslint.config.ts,crowdin.yml,.env.local",
+    "package.json": ".infisical.json,.gitignore,.editorconfig,tsconfig.json,eslint.config.ts,crowdin.yml,.env.local",
     "vite.config.ts": "index.html,lingui.config.ts",
     "main.tsx": "reset.d.ts,env.d.ts,vite-env.d.ts",
-    "tailwind.config.ts": "postcss.config.js,components.json",
-    "deno.json": ".infisical.json"
+    "tailwind.config.ts": "postcss.config.js,components.json"
   },
   "files.exclude": {
     "**/bun.lockb": true,

@@ -1,14 +1,7 @@
-@tanstack/react-query
 @tanstack/react-router
-
-zustand + optimization examples (hooks, getters and so on)
-lingui.dev
-
-overlayscrollbars
 zod
 
+overlayscrollbars
 drag and drop library
 
-logger + crashlytics
-
-https://github.com/lingui/eslint-plugin/issues/31
+posthog + sentry

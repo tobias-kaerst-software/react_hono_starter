@@ -7,7 +7,7 @@
   },
   "tasks": {
     "start": "deno run -N src/main.ts",
-    "dev": "infisical run --env=dev -- deno run -NERS --watch src/main.ts",
+    "dev": "infisical run --project-config-dir=.. --env=dev --path=/backend -- deno run -NERS --watch src/main.ts",
     "build": "deno compile -N --output dist/main src/main.ts",
     "lint": "sleep 1 && deno task lint:check & deno task lint:prettier & deno task lint:eslint",
     "lint:check": "deno check src/main.ts",

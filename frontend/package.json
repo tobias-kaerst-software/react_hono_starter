@@ -2,7 +2,7 @@
   "name": "frontend",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "infisical run --project-config-dir=.. --env=dev --path=/frontend -- vite --host",
     "build": "bun lint:tsc && vite build",
     "preview": "vite preview",
     "analyze": "bunx vite-bundle-visualizer",
@@ -21,11 +21,14 @@
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-switch": "^1.1.0",
+    "@tanstack/react-query": "^5.56.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "ky": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2",
+    "zod": "^3.23.8",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
