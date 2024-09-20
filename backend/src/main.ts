@@ -1,7 +1,9 @@
 import { Hono } from 'hono';
 
-const app = new Hono();
+import { connectDB } from '$/config/database.ts';
+import { todosRouter } from '$/routes/todos/router.ts';
 
-app.get('/', (c) => c.text('Hello Hono!'));
+const app = new Hono().route('/todos', todosRouter());
 
+await connectDB();
 Deno.serve(app.fetch);

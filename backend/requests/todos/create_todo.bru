@@ -1,0 +1,17 @@
+meta {
+  name: create_todo
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/todos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "text": "Implement something"
+  }
+}
