@@ -21,14 +21,13 @@ jobs:
             backend:
               - 'backend/**'
               - 'modules/**'
-              - 'deno.json'
-              - 'deno.lock'
               - '.github/workflows/ci.yml'
             frontend:
               - 'frontend/**'
               - 'modules/**'
               - 'package.json'
-              - 'package-lock.json'
+              - 'bun.lockb'
+              - 'crowdin.yml'
               - '.github/workflows/ci.yml'
 
   frontend:
