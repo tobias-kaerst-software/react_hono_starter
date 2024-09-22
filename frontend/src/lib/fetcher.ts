@@ -14,10 +14,11 @@ export const queryClient = new QueryClient({
 const kyClient = ky.create({ prefixUrl: env.VITE_BACKEND_URL });
 const kyParser = async <T extends z.ZodTypeAny>(schema: T, res: KyResponse) => {
   try {
-    const parsed = schema.safeParse(await res.json());
+    const rawJson = await res.json();
+    const parsed = schema.safeParse(rawJson);
 
     if (!parsed.success) {
-      logger(parsed.error.format());
+      logger([parsed.error.format(), rawJson]);
       throw new Error('failed to parse response');
     }
 

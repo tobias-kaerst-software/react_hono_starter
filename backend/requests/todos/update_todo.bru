@@ -1,0 +1,18 @@
+meta {
+  name: update_todo
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{base_url}}/todos/66f0941b7c5454f4eee44c16
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "text": "Hello World!",
+    "completed": false
+  }
+}
