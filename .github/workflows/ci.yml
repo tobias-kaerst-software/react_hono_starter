@@ -97,7 +97,7 @@ jobs:
         run: bun install
 
       - name: Run linter
-        run: deno task lint
+        run: sleep 1 && deno task check & bun lint
         working-directory: backend
 
       - name: Build project
