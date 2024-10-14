@@ -10,9 +10,6 @@ export const connectDB = async () => {
 };
 
 export const db = () => {
-  if (!database) {
-    database = client.db(env.MONGO_DB);
-  }
-
+  if (!database) database = client.db(env.MONGO_DB);
   return database;
 };

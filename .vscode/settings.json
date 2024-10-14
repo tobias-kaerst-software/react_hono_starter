@@ -1,57 +1,6 @@
 {
-  // !Editor settings
-  "cSpell.language": "en,de-de",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
-  "editor.unicodeHighlight.allowedCharacters": { "️": true },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  "workbench.editor.labelFormat": "short",
-
-  // !Explorer
-  "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    "package.json": ".infisical.json,.gitignore,.editorconfig,tsconfig.json,eslint.config.ts,crowdin.yml,.env.local",
-    "vite.config.ts": "index.html,lingui.config.ts",
-    "main.tsx": "reset.d.ts,env.d.ts,vite-env.d.ts",
-    "tailwind.config.ts": "postcss.config.js,components.json"
-  },
   "files.exclude": {
-    "**/bun.lockb": true,
-    "**/deno.lock": true,
-    "**/node_modules": true,
-    "**/.swc": true
-  },
-
-  //! Language features
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-
-  "eslint.workingDirectories": ["frontend", "backend"],
-  "eslint.options": {
-    "flags": ["unstable_ts_config"]
-  },
-
-  "deno.enablePaths": ["backend"],
-  "deno.enable": true,
-
-  "files.associations": { "*.css": "tailwindcss" },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ],
-
-  //! Formatters
-  "[json][jsonc][html][javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "**/backend": true,
+    "**/frontend": true
   }
 }

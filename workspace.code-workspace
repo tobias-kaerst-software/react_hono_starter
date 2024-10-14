@@ -1,0 +1,31 @@
+{
+  "folders": [{ "path": "." }, { "path": "backend" }, { "path": "frontend" }],
+  "settings": {
+    "cSpell.language": "en,de-de",
+
+    "editor.unicodeHighlight.allowedCharacters": { "️": true },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+
+    "workbench.editor.labelFormat": "short",
+
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+
+    "files.associations": { "*.css": "tailwindcss" }
+  },
+  "extensions": {
+    "recommendations": [
+      "streetsidesoftware.code-spell-checker",
+      "bruno-api-client.bruno",
+      "irongeek.vscode-env",
+      "pomber.git-file-history",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}

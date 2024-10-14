@@ -1,13 +1,21 @@
 {
+  "tasks": {
+    "dev": "infisical run --project-config-dir=.. --path=/backend -- deno run -NERS --watch src/main.ts",
+    "build": "deno compile -N --output dist/main src/main.ts",
+    "check": "deno check src/main.ts",
+    "lint": "deno lint src/main.ts"
+  },
   "imports": {
     "$/": "./src/",
     "hono": "jsr:@hono/hono@^4.5.10",
     "mongodb": "npm:mongodb@^6.9.0",
     "zod": "npm:zod@^3.23.8"
   },
-  "tasks": {
-    "dev": "infisical run --project-config-dir=.. --env=dev --path=/backend -- deno run -NERS --watch src/main.ts",
-    "build": "DENO_NO_PACKAGE_JSON=1 deno compile -N --output dist/main src/main.ts",
-    "check": "DENO_NO_PACKAGE_JSON=1 deno check src/main.ts"
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 120,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": true
   }
 }

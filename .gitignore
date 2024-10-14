@@ -1,9 +1,1 @@
-# dependencies
-node_modules
-
-# misc
 .DS_Store
-
-# build output
-dist
-.swc

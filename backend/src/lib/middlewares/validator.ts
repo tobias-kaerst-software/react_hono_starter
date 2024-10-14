@@ -1,4 +1,4 @@
-import { Context } from 'hono';
+import type { Context } from 'hono';
 import { ZodType } from 'zod';
 
 export const zod = <T>(schema: ZodType<T>) => {
