@@ -19,16 +19,11 @@ jobs:
         with:
           filters: |
             backend:
+              - '.github/workflows/ci.yml'
               - 'backend/**'
-              - 'modules/**'
-              - '.github/workflows/ci.yml'
             frontend:
-              - 'frontend/**'
-              - 'modules/**'
-              - 'package.json'
-              - 'bun.lockb'
-              - 'crowdin.yml'
               - '.github/workflows/ci.yml'
+              - 'frontend/**'
 
   frontend:
     name: Lint and build frontend
@@ -52,13 +47,14 @@ jobs:
 
       - name: Install dependencies
         run: bun install
+        working-directory: frontend
 
       - name: Run linter
-        run: bun run lint
+        run: bun frontend lint
         working-directory: frontend
 
       - name: Build project
-        run: bun run build
+        run: bun frontend build
         working-directory: frontend
 
   backend:
@@ -78,26 +74,16 @@ jobs:
           path: ${{ env.DENO_DIR }}
           key: ${{ runner.os }}-deno-${{ hashFiles('backend/deno.lock') }}
 
-      - uses: denoland/setup-deno@v1
+      - uses: denoland/setup-deno@v2
         with:
-          deno-version: vx.x.x
+          deno-version: v2.x
 
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.bun/install/cache
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lockb') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
+      - name: Check Formatting
+        run: deno fmt --check
+        working-directory: backend
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Run linter
-        run: sleep 1 && deno task check & bun lint
+      - name: Run Linter
+        run: deno lint
         working-directory: backend
 
       - name: Build project

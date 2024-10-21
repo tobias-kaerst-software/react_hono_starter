@@ -1,9 +1,7 @@
 {
   "tasks": {
     "dev": "infisical run --project-config-dir=.. --path=/backend -- deno run -NERS --watch src/main.ts",
-    "build": "deno compile -N --output dist/main src/main.ts",
-    "check": "deno check src/main.ts",
-    "lint": "deno lint src/main.ts"
+    "build": "deno compile -N --output dist/main src/main.ts"
   },
   "imports": {
     "$/": "./src/",

@@ -1,4 +1,3 @@
-import { CaretSortIcon, CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import {
   Content,
   Icon,
@@ -13,6 +12,7 @@ import {
   Trigger,
   Viewport,
 } from '@radix-ui/react-select';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
 
 import { cn } from '$/lib/utils';
@@ -30,7 +30,7 @@ const SelectTrigger = forwardRef<ElementRef<typeof Trigger>, ComponentPropsWitho
       >
         {children}
         <Icon asChild>
-          <CaretSortIcon className='size-4 opacity-50' />
+          <ChevronDown className='size-4 opacity-50' />
         </Icon>
       </Trigger>
     );
@@ -47,7 +47,7 @@ const SelectScrollUpButton = forwardRef<
       ref={ref}
       {...props}
     >
-      <ChevronUpIcon />
+      <ChevronUp />
     </ScrollUpButton>
   );
 });
@@ -62,7 +62,7 @@ const SelectScrollDownButton = forwardRef<
       ref={ref}
       {...props}
     >
-      <ChevronDownIcon />
+      <ChevronDown />
     </ScrollDownButton>
   );
 });
@@ -121,7 +121,7 @@ const SelectItem = forwardRef<ElementRef<typeof Item>, ComponentPropsWithoutRef<
     >
       <span className='absolute right-2 flex size-3.5 items-center justify-center'>
         <ItemIndicator>
-          <CheckIcon className='size-4' />
+          <Check className='size-4' />
         </ItemIndicator>
       </span>
       <ItemText>{children}</ItemText>

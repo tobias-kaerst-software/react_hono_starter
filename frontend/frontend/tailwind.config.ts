@@ -7,11 +7,6 @@ export default {
   darkMode: ['class'],
   plugins: [tailwind_animate],
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: { '2xl': '1400px' },
-    },
     extend: {
       borderRadius: {
         lg: 'var(--radius)',
@@ -62,9 +57,6 @@ export default {
       },
       fontFamily: {
         geist: ['Geist', 'sans-serif'],
-      },
-      fontSize: {
-        base: '16px',
       },
     },
   },

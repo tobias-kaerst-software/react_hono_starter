@@ -1,11 +1,11 @@
 {
-  "name": "react_hono_starter",
+  "name": "jwt-customer-portal-frontend",
   "workspaces": [
     "frontend",
     "modules/*"
   ],
   "overrides": {
-    "@swc/core": "1.6.13"
+    "@swc/core": "1.7.35"
   },
   "scripts": {
     "frontend": "bun --filter 'frontend'",
