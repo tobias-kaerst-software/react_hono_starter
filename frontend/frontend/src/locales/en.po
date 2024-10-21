@@ -15,20 +15,25 @@ msgstr ""
 "Project-Id-Version: react-hono-starter\n"
 "Language-Team: English\n"
 "PO-Revision-Date: 2024-09-11 19:22\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
 
-#: src/pages/Homepage.tsx:12
-msgid "Einführung in React.js"
-msgstr "Introduction to React.js"
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:34
+msgid "homepage.header"
+msgstr ""
 
-#: src/pages/Homepage.tsx:23
-msgid "Erste Schritte"
-msgstr "Getting Started"
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:37
+msgid "homepage.description"
+msgstr ""
 
-#: src/pages/Homepage.tsx:15
-msgid "React.js, allgemein bekannt als React, ist eine Open-Source-JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen, insbesondere für Single-Page-Anwendungen. Entwickelt von Facebook, ermöglicht React Entwicklern, große Webanwendungen zu erstellen, die effizient auf Datenänderungen reagieren und sich entsprechend aktualisieren können."
-msgstr "React.js, commonly known as React, is an open-source JavaScript library for building user interfaces, especially for single-page applications. Developed by Facebook, React allows developers to create large web applications that can update and render efficiently in response to data changes."
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:40
+msgid "homepage.firstSteps"
+msgstr ""
 
-#: src/pages/Homepage.tsx:26
-msgid "Um mit React zu beginnen, müssen Node.js und npm (Node Package Manager) auf Ihrem Computer installiert sein. Sie können eine neue React-Anwendung mit dem folgenden Befehl erstellen:"
-msgstr "To get started with React, you need to have Node.js and npm (Node Package Manager) installed on your machine. You can create a new React application using the following command:"
-
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:43
+msgid "homepage.gettingStarted"
+msgstr ""

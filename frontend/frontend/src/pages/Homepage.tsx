@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react';
 import { useQuery } from '@tanstack/react-query';
 import { useRef } from 'react';
 
@@ -31,24 +31,16 @@ export const Homepage = () => {
     <Stack className='container max-w-[750px] gap-10 pt-24'>
       <div>
         <Typography variant='h1'>
-          <Trans>Einführung in React.js</Trans>
+          <Trans id='homepage.header' />
         </Typography>
         <Typography variant='p'>
-          <Trans>
-            React.js, allgemein bekannt als React, ist eine Open-Source-JavaScript-Bibliothek zur Erstellung von
-            Benutzeroberflächen, insbesondere für Single-Page-Anwendungen. Entwickelt von Facebook, ermöglicht React
-            Entwicklern, große Webanwendungen zu erstellen, die effizient auf Datenänderungen reagieren und sich
-            entsprechend aktualisieren können.
-          </Trans>
+          <Trans id='homepage.description' />
         </Typography>
         <Typography variant='h2'>
-          <Trans>Erste Schritte</Trans>
+          <Trans id='homepage.firstSteps' />
         </Typography>
         <Typography variant='p'>
-          <Trans>
-            Um mit React zu beginnen, müssen Node.js und npm (Node Package Manager) auf Ihrem Computer installiert sein.
-            Sie können eine neue React-Anwendung mit dem folgenden Befehl erstellen:
-          </Trans>
+          <Trans id='homepage.gettingStarted' />
         </Typography>
         <Button className='w-full' onClick={increment}>
           Mehr erfahren {bears}

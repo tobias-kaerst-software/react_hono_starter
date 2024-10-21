@@ -6,19 +6,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: de\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
-#: src/pages/Homepage.tsx:12
-msgid "Einführung in React.js"
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:34
+msgid "homepage.header"
 msgstr "Einführung in React.js"
 
-#: src/pages/Homepage.tsx:23
-msgid "Erste Schritte"
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:37
+msgid "homepage.description"
 msgstr "Erste Schritte"
 
-#: src/pages/Homepage.tsx:15
-msgid "React.js, allgemein bekannt als React, ist eine Open-Source-JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen, insbesondere für Single-Page-Anwendungen. Entwickelt von Facebook, ermöglicht React Entwicklern, große Webanwendungen zu erstellen, die effizient auf Datenänderungen reagieren und sich entsprechend aktualisieren können."
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:40
+msgid "homepage.firstSteps"
 msgstr "React.js, allgemein bekannt als React, ist eine Open-Source-JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen, insbesondere für Single-Page-Anwendungen. Entwickelt von Facebook, ermöglicht React Entwicklern, große Webanwendungen zu erstellen, die effizient auf Datenänderungen reagieren und sich entsprechend aktualisieren können."
 
-#: src/pages/Homepage.tsx:26
-msgid "Um mit React zu beginnen, müssen Node.js und npm (Node Package Manager) auf Ihrem Computer installiert sein. Sie können eine neue React-Anwendung mit dem folgenden Befehl erstellen:"
+#. js-lingui-explicit-id
+#: src/pages/Homepage.tsx:43
+msgid "homepage.gettingStarted"
 msgstr "Um mit React zu beginnen, müssen Node.js und npm (Node Package Manager) auf Ihrem Computer installiert sein. Sie können eine neue React-Anwendung mit dem folgenden Befehl erstellen:"
