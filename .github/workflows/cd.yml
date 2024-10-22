@@ -46,14 +46,14 @@ jobs:
       - name: Upload Translations
         uses: crowdin/github-action@v2
         with:
-          base_path: frontend
+          config: frontend/crowdin.yml
+          #base_path: frontend
           #preserve_hierarchy: 1
-          source: frontend/src/locales/de.po
-          translation: frontend/src/locales/%two_letters_code%.po
+          #source: frontend/src/locales/de.po
+          #translation: frontend/src/locales/%two_letters_code%.po
           upload_sources: true
           upload_translations: true
           download_translations: true
-          skip_untranslated_files: true
           #upload_sources: true
           #upload_translations: false
           #download_translations: true
