@@ -48,7 +48,7 @@ jobs:
         with:
           base_path: frontend
           #preserve_hierarchy: 1
-          source: frontend/src/locales/de.po*
+          source: frontend/src/locales/de.po
           translation: frontend/src/locales/%two_letters_code%.po
           upload_sources: true
           upload_translations: true
