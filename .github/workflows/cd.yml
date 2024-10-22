@@ -48,12 +48,11 @@ jobs:
         with:
           config: frontend/crowdin.yml
           base_path: frontend
-          #preserve_hierarchy: 1
-          #source: frontend/src/locales/de.po
-          #translation: frontend/src/locales/%two_letters_code%.po
           upload_sources: true
           upload_translations: true
           download_translations: true
+          push_translations: true
+          push_sources: true
           #upload_sources: true
           #upload_translations: false
           #download_translations: true
@@ -62,6 +61,6 @@ jobs:
           #pull_request_title: 'Crowdin Translations'
           #pull_request_base_branch_name: 'main'
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ env.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ env.CROWDIN_PERSONAL_TOKEN }}
