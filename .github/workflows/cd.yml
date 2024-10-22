@@ -37,23 +37,23 @@ jobs:
 
       - uses: Infisical/secrets-action@v1.0.7
         with:
-          client-id: ${{ secrets.MACHINE_IDENTITY_CLIENT_ID }}
-          client-secret: ${{ secrets.MACHINE_IDENTITY_CLIENT_SECRET }}
-          env-slug: 'dev'
-          project-slug: 'recipe-manager-1vpm'
+          client-id: ${{ secrets.INFISICAL_CLIENT_ID }}
+          client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
+          project-slug: '${{ vars.INFISICAL_PROJECT_SLUG }}'
           secret-path: '/frontend'
+          env-slug: 'dev'
 
       - name: Upload Translations
         uses: crowdin/github-action@v2
         with:
           config: frontend/crowdin.yml
-          upload_sources: true
-          upload_translations: false
-          download_translations: true
-          localization_branch_name: l10n_branch
-          create_pull_request: true
-          pull_request_title: 'Crowdin Translations'
-          pull_request_base_branch_name: 'main'
+          #upload_sources: true
+          #upload_translations: false
+          #download_translations: true
+          #localization_branch_name: l10n_branch
+          #create_pull_request: true
+          #pull_request_title: 'Crowdin Translations'
+          #pull_request_base_branch_name: 'main'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ env.CROWDIN_PROJECT_ID }}
