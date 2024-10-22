@@ -47,6 +47,10 @@ jobs:
         uses: crowdin/github-action@v2
         with:
           config: frontend/crowdin.yml
+          upload_sources: true
+          upload_translations: true
+          download_translations: true
+          skip_untranslated_files: true
           #upload_sources: true
           #upload_translations: false
           #download_translations: true
