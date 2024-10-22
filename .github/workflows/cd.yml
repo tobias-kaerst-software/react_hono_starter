@@ -5,6 +5,10 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   changes:
     name: Determine
@@ -48,9 +52,14 @@ jobs:
         with:
           config: frontend/crowdin.yml
           base_path: frontend
+
           upload_sources: true
           upload_translations: true
-          download_translations: true
+          # download_translations: true
+
+          create_pull_request: true
+          localization_branch_name: l10n_crowdin_translations
+
           push_translations: true
           push_sources: true
           #upload_sources: true
