@@ -1,6 +1,7 @@
 project_id_env: CROWDIN_PROJECT_ID
 api_token_env: CROWDIN_PERSONAL_TOKEN
 preserve_hierarchy: 1
+base_path: frontend
 files:
-  - source: frontend/frontend/src/locales/de.po*
-    translation: frontend/frontend/src/locales/%two_letters_code%.po
+  - source: frontend/src/locales/de.po*
+    translation: frontend/src/locales/%two_letters_code%.po
