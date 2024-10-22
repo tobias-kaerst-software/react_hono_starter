@@ -3,7 +3,7 @@ name: CD Pipeline
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, develop]
 
 permissions:
   contents: write
@@ -32,33 +32,36 @@ jobs:
 
   frontend:
     name: Lint and build frontend
+    runs-on: ubuntu-latest
+
     needs: changes
     if: ${{ needs.changes.outputs.frontend == 'true' }}
-    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - uses: Infisical/secrets-action@v1.0.7
+      - name: Initialize environment variables
+        uses: Infisical/secrets-action@v1.0.7
         with:
           client-id: ${{ secrets.INFISICAL_CLIENT_ID }}
           client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
           project-slug: '${{ vars.INFISICAL_PROJECT_SLUG }}'
+          env-slug: '${{ vars.INFISICAL_ENV_SLUG }}'
           secret-path: '/frontend'
-          env-slug: 'dev'
 
-      - name: Upload Translations
+      - name: Upload Sources / Fetch Translations
         uses: crowdin/github-action@v2
         with:
           config: frontend/crowdin.yml
           base_path: frontend
 
-          upload_sources: true
-          upload_translations: true
-          download_translations: true
-
           create_pull_request: true
-          push_translations: true
+          download_translations: true
+          upload_sources: true
           push_sources: true
 
           pull_request_title: Update Translations

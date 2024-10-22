@@ -27,12 +27,25 @@ jobs:
 
   frontend:
     name: Lint and build frontend
+    runs-on: ubuntu-latest
+
     needs: changes
     if: ${{ needs.changes.outputs.frontend == 'true' }}
-    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - uses: Infisical/secrets-action@v1.0.7
+        with:
+          client-id: ${{ secrets.INFISICAL_CLIENT_ID }}
+          client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
+          project-slug: '${{ vars.INFISICAL_PROJECT_SLUG }}'
+          env-slug: '${{ vars.INFISICAL_ENV_SLUG }}'
+          secret-path: '/frontend'
 
       - name: Cache Bun dependencies
         uses: actions/cache@v4
@@ -56,6 +69,23 @@ jobs:
       - name: Build project
         run: bun frontend build
         working-directory: frontend
+
+      - name: Fetch Translations
+        uses: crowdin/github-action@v2
+        with:
+          config: frontend/crowdin.yml
+          base_path: frontend
+
+          download_translations: true
+          create_pull_request: true
+
+          pull_request_title: Update Translations
+          pull_request_labels: localization
+          localization_branch_name: l10n_crowdin_translations
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ env.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ env.CROWDIN_PERSONAL_TOKEN }}
 
   backend:
     name: Lint and build backend
