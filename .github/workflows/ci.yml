@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   push:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   changes:
     name: Determine
@@ -40,14 +44,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - uses: Infisical/secrets-action@v1.0.7
-        with:
-          client-id: ${{ vars.INFISICAL_CLIENT_ID }}
-          client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
-          project-slug: '${{ vars.INFISICAL_PROJECT_SLUG }}'
-          env-slug: '${{ vars.INFISICAL_ENV_SLUG }}'
-          secret-path: '/frontend'
-
       - name: Cache Bun dependencies
         uses: actions/cache@v4
         with:
@@ -70,6 +66,25 @@ jobs:
       - name: Build project
         run: bun frontend build
         working-directory: frontend
+
+  translations:
+    name: Fetch latest translations
+    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: Infisical/secrets-action@v1.0.7
+        with:
+          client-id: ${{ vars.INFISICAL_CLIENT_ID }}
+          client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
+          project-slug: '${{ vars.INFISICAL_PROJECT_SLUG }}'
+          env-slug: '${{ vars.INFISICAL_ENV_SLUG }}'
+          secret-path: '/frontend'
 
       - name: Fetch Translations
         uses: crowdin/github-action@v2

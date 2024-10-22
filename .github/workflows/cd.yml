@@ -45,8 +45,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Initialize environment variables
-        uses: Infisical/secrets-action@v1.0.7
+  translations:
+    name: Fetch / push latest translations
+    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: Infisical/secrets-action@v1.0.7
         with:
           client-id: ${{ vars.INFISICAL_CLIENT_ID }}
           client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
