@@ -47,7 +47,7 @@ jobs:
         uses: crowdin/github-action@v2
         with:
           config: frontend/crowdin.yml
-          #base_path: frontend
+          base_path: frontend
           #preserve_hierarchy: 1
           #source: frontend/src/locales/de.po
           #translation: frontend/src/locales/%two_letters_code%.po
