@@ -58,10 +58,12 @@ jobs:
           download_translations: true
 
           create_pull_request: true
-          localization_branch_name: l10n_crowdin_translations
-
           push_translations: true
           push_sources: true
+
+          pull_request_title: Update Translations
+          pull_request_labels: localization
+          localization_branch_name: l10n_crowdin_translations
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ env.CROWDIN_PROJECT_ID }}
